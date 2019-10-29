@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-#if NETSTANDARD2_0
+#if net462
 using Microsoft.AspNetCore.Http;
 #endif
 #if NET35
@@ -44,7 +44,7 @@ namespace UEditor.Core.Handlers
         {
             try
             {
-#if NETSTANDARD2_0
+#if net462
                 Start = string.IsNullOrWhiteSpace(Request.Query["start"]) ? 0 : Convert.ToInt32(Request.Query["start"]);
                 Size = string.IsNullOrWhiteSpace(Request.Query["size"]) ? Config.GetInt("imageManagerListSize") : Convert.ToInt32(Request.Query["size"]);
 #endif

@@ -1,4 +1,4 @@
-﻿#if NETSTANDARD2_0
+﻿#if net462
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 #endif
@@ -9,7 +9,7 @@ namespace UEditor.Core
 {
     public static class UEditorMvcExtension
     {
-#if NETSTANDARD2_0
+#if net462
         /// <summary>
         /// 添加UEditor后端服务
         /// </summary>

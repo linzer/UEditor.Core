@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Net;
-#if NETSTANDARD2_0
+#if net462
 using Microsoft.AspNetCore.Http;
 #endif
 #if NET35
@@ -18,7 +18,7 @@ namespace UEditor.Core.Handlers
 
         public override UEditorResult Process()
         {
-#if NETSTANDARD2_0            
+#if net462            
             _sources = Request.Form["source[]"];
 
             //fixed bug:https://github.com/baiyunchen/UEditor.Core/pull/5

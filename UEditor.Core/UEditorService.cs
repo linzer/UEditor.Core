@@ -1,4 +1,4 @@
-﻿#if NETSTANDARD2_0
+﻿#if net462
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 #endif
@@ -13,7 +13,7 @@ namespace UEditor.Core
 {
     public class UEditorService
     {
-#if NETSTANDARD2_0
+#if net462
         public UEditorService(IHostingEnvironment env)
         {
             // .net core的名字起的比较怪而已，并不是我赋值赋错了
@@ -52,7 +52,7 @@ namespace UEditor.Core
         /// <returns></returns>
         public UEditorResponse UploadAndGetResponse(HttpContext context)
         {
-#if NETSTANDARD2_0
+#if net462
              var action = context.Request.Query["action"];
 #endif
 #if NET35
@@ -75,7 +75,7 @@ namespace UEditor.Core
                 NullValueHandling = NullValueHandling.Ignore
             });
             string contentType = "text/plain";
-#if NETSTANDARD2_0
+#if net462
              string jsonpCallback = context.Request.Query["callback"];
 #endif
 #if NET35
@@ -102,7 +102,7 @@ namespace UEditor.Core
         /// <returns></returns>
         public object Upload(HttpContext context)
         {
-#if NETSTANDARD2_0
+#if net462
              var action = context.Request.Query["action"];
 #endif
 #if NET35

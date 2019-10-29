@@ -1,4 +1,4 @@
-﻿#if NETSTANDARD2_0
+﻿#if net462
 using Microsoft.AspNetCore.Http;
 #endif
 #if NET35

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
-#if NETSTANDARD2_0
+#if net462
 using Microsoft.AspNetCore.Http;
 #endif
 #if NET35
@@ -42,7 +42,7 @@ namespace UEditor.Core.Handlers
             }
             else
             {
-#if NETSTANDARD2_0
+#if net462
                 var file = Request.Form.Files[UploadConfig.UploadFieldName];
 #endif
 #if NET35
@@ -55,7 +55,7 @@ namespace UEditor.Core.Handlers
                     Result.State = UploadState.TypeNotAllow;
                     return WriteResult();
                 }
-#if NETSTANDARD2_0
+#if net462
                 if (!CheckFileSize(file.Length))
 #endif
 #if NET35
@@ -67,7 +67,7 @@ namespace UEditor.Core.Handlers
                     return WriteResult();
 
                 }
-#if NETSTANDARD2_0
+#if net462
                 uploadFileBytes = new byte[file.Length];
                  try
                 {
